@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <meta http-equiv="X-UA-COMPATIBLE" content="IE-edge,chrome=1"><!--告诉ie使用新的渲染方式，防止低版本的ie不能使用css3-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        @keyframes myfirst
+        {
+            from {margin-left:0px;}
+            to {margin-left:140px;}
+        }
+         
+        @-webkit-keyframes myfirst /* Safari 与 Chrome */
+        {
+             from {margin-left:0px;}
+            to {margin-left:140px;}
+        }
+        div{
+            width:100px;
+            height:100px;
+
+            position:absolute;
+            left:50%;
+            top:50%;
+            margin-left:-50px;
+            margin-top:-50px;
+        }
+        div.temp
+        {   
+            background:blue;
+          /*  animation: mysfirst 1s linear infinite;  
+            animation-direction:alternate;
+            -webkit-animation: myfirst 1s  linear infinite; 
+            -webkit-animation-direction: alternate;
+            -webkit-animation-timing-function: linear infinite; */
+
+
+/*
+            opacity: 1; -webkit-transform: translateX(100%); transform: translateX(100%); -webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s; transition: transform 0.4s, opacity 0.1s 0.3s;*/
+        }
+       /* div.temp:hover{ 
+            opacity: 1; transform: translateX(0px); transition: transform 0.4s, opacity 0.1s; -webkit-transform: translateX(0px); -webkit-transition: -webkit-transform 0.4s, opacity 0.1s; }
+        */
+    </style>
+</head>
+<body>
+    <div class="temp" id="test"></div>
+   
+<script>
+window.onload=function(){
+     var oDiv = document.getElementById('test');
+            var x1 = oDiv.offsetLeft,
+                y1 = -oDiv.offsetTop, //注意坐标，所有的y坐标都是负数
+                x2 = x1 + oDiv.offsetWidth,
+                y2 = y1 - oDiv.offsetHeight, //同样y坐标为负数
+                x0 = (x1 + x2) / 2,
+                y0 = (y1 + y2) / 2;
+            var k = (y2 - y1) / (x2 - x1); //斜率k
+            // alert(-x1)
+            oDiv.onmouseover = function (e) {
+                var e = e || window.event;
+                var x = e.clientX, //鼠标刚移入div内，记录下当前的x坐标
+                    y = -e.clientY; //鼠标刚移入div内，记录下当前的y坐标
+                var K = (y - y0) / (x - x0); //K是鼠标移入点和中心点的斜率
+                // console.log("div斜率："+k);
+                // console.log("鼠标移入斜率："+k);
+                //当K大于k并且小于-k时，则肯定是左右移入，当移入点的x坐标大于中心点 ，则为右移入，小于则是左移入
+
+                if (k < K && K < -k) {
+                    if (x > x0) {
+                        alert('右');
+                    } else {
+                        alert('左');
+                    }
+                } else {
+                    //注意此处y是负数，判断上下的方法同上
+                    if (y > y0) {
+                        alert('上');
+                    } else {
+                        alert('下');
+                    }
+                }
+               console.log(x2);
+               console.log(x);
+
+
+            }
+}
+</script>
+</body>
+</html>
