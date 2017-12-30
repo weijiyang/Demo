@@ -1,0 +1,68 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/jquery.js"></script>
+	<script>
+		function test(text){
+			document.write(text)
+		}
+
+
+
+		// function Ninjia(){
+		// 	this.swung = true;
+		// 	this.swingSword = function(){
+		// 		return !this.swung;
+		// 	}
+		// }
+
+		// var nijia = new Ninjia();
+		// Ninjia.prototype.swingSword = function(){
+		// 	return this.swung;
+		// }
+
+		// test(nijia instanceof Ninjia)
+
+
+
+		// function Animal(){
+		// }
+		// Animal.prototype.live = function(){
+		// 	console.log("this is live function")
+		// }
+		// function People(){
+		// }
+		// People.prototype = new Animal();
+
+		// var animal = new Animal()
+		// var nijia= new People()
+
+		// Animal.prototype.speak = function(){
+		// 	console.log("this is speak funciton")
+		// }
+		// People.prototype.learn = function(){
+		// 	console.log("this is learn function")
+		// }
+		// nijia.speak()
+		// animal.learn()
+
+
+
+		function Ninjia(){}
+		Ninjia.prototype.demo = true;
+		var tip = new Ninjia();
+		test(tip.demo)
+		setTimeout(function(){
+			Ninjia.prototype.demo = false;
+		},2000)
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
