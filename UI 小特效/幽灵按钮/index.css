@@ -1,0 +1,130 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+
+body{
+	background:#333;
+}
+
+.box{
+	width:800px;
+	height:280px;
+	margin:0 auto;
+}
+
+.box .link{
+	width:205px;
+	height:280px;
+}
+
+.link .icon{
+	display:inline-block;
+	width:100%;
+	height:190px;
+	transition:all 0.2s ease-out;
+	-moz-transition:all 0.2s ease-out;
+	-webkit-transition:all 0.2s ease-out;
+	-o-transition:all 0.2s ease-out;
+}
+.link-miss .icon{
+	background:url('index.jpg') no-repeat center center;
+	margin-bottom:50px;
+}
+
+.link .icon:hover{
+	transform:rotate(360deg) scale(1.2);
+	-ms-transform:rotate(360deg) scale(1.2);
+	-moz-transform:rotate(360deg) scale(1.2);
+	-webkit-transform:rotate(360deg) scale(1.2);
+	-o-transform:rotate(360deg) scale(1.2);
+}
+
+.button{
+	display:block;
+	width:180px;
+	height:50px;
+	line-height:50px;
+	text-decoration:none;
+	color:#2DCB70;
+	font-family:Arial;
+	font-weight:bolder;
+	border:2px solid rgba(255,255,255,0.8);
+	padding-left:20px;
+	margin:0 auto;
+	box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+
+	transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	-webkit-transition:all 0.4s ease;
+	-o-transition:all 0.4s ease;
+
+}
+.button:hover{
+	border:2px solid rgba(255,255,255,1);
+}
+.button:hover i{
+	margin-left:36px;
+}
+
+
+.button .line{
+	display:block;
+	position:absolute;
+	background:none;
+}
+.button:hover .line{
+	background-color:#fff;
+	transition:all 0.4s ease;
+}
+.button .line-top{
+	height:2px;
+	width:0px;
+	margin-left:-110%;	
+	margin-top:-2px;
+}
+.button:hover .line-top{
+	width:181px;
+	margin-left:-22px;
+}
+
+.button .line-bottom{
+	height:2px;
+	width:0px;
+	margin-left:400px;
+	margin-top:46px;
+	/*background-color:#f00;*/
+}
+.button:hover .line-bottom{
+	width:179px;
+	margin-left:-22px;
+}
+.button .line-left{
+	width:2px;
+	height:0px;
+	margin-left:-22px;
+	margin-top:220px;
+
+}
+.button:hover .line-left{
+	height:50px;
+	margin-top:-2px;
+}
+
+.button .line-right{
+	width:2px;
+	height:0px;
+	margin-left:156px;
+	margin-top:-120px;
+
+}
+.button:hover .line-right{
+	height:50px;
+	margin-top:-2px;
+
+}
