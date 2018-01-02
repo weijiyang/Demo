@@ -1,0 +1,38 @@
+/*! 版权所有 */
+/* main.css */
+html {
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background:red;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #eee;
+  padding: 10px;
+  border: 3px solid #ccc;
+}body .less {
+  background: url(data:image/png;base64,bW9kdWxlLmV4cG9ydHMgPSBfX3dlYnBhY2tfcHVibGljX3BhdGhfXyArICJpbWFnZXMvYjAxZjgzN2MuaW1hZ2UucG5nIjs=) center no-repeat;
+}
+h1 .less {
+  font-size: 20px;
+}
+h1 .less p {
+  color: red;
+}
+h2 .less {
+  font-size: 16px;
+}

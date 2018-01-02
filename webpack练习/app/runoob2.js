@@ -1,0 +1,1 @@
+module.exports = "IT'S WORKS FORM RUNOOB2.JS";
