@@ -1,0 +1,41 @@
+#header {
+  -moz-box-shadow: 2px 3px 4px #123;
+  -webkit-box-shadow: 2px 3px 4px #123;
+}
+/*分割线*/
+#home {
+  color: red;
+}
+#home #top {
+  font-size: 12px;
+}
+#home #top #top_content {
+  color: yellow;
+}
+#home #top #top_content_temp {
+  color: blue;
+}
+/*分割线*/
+a {
+  color: red;
+}
+a:hover {
+  font-size: 10px;
+}
+a {
+  color: red;
+}
+a :hover {
+  font-size: 10px;
+}
+/*分割线！！！*/
+#showcss {
+  color: #f3797a;
+  color: #eb1b1c;
+  color: #f94041;
+  color: #e55455;
+  color: #ef4a4b;
+  color: rgba(239, 74, 75, 0.9);
+  color: #ef644a;
+  color: #ef4a66;
+}

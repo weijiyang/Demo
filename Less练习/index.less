@@ -1,0 +1,47 @@
+.boxShadow(@x:0;@y:0;@blur:1px;@color:#000){
+	-moz-box-shadow:@arguments;
+	-webkit-box-shadow:@arguments;
+}
+#header{
+	.boxShadow(2px,3px,4px,#123);
+}
+
+/*分割线*/
+
+#home{
+	color:red;
+	#top{
+		font-size:12px;
+		#top_content{
+			color:yellow;
+		}
+		#top_content_temp{
+			color:blue;
+		}
+	}
+}
+
+/*分割线*/
+a{
+	color:red;
+	&:hover{font-size:10px;}
+}
+a{
+	color:red;
+	:hover{font-size:10px;}
+}
+
+/*分割线！！！*/
+.changeColor(@color){
+	color:lighten(@color, 10%); // return a color which is 10% *lighter* than @color 
+	color:darken(@color, 10%); // return a color which is 10% *darker* than @color 
+	color:saturate(@color, 10%); // return a color 10% *more* saturated than @color 
+	color:desaturate(@color, 10%);// return a color 10% *less* saturated than @color 
+	color:fadein(@color, 10%); // return a color 10% *less* transparent than @color 
+	color:fadeout(@color, 10%); // return a color 10% *more* transparent than @color 
+	color:spin(@color, 10); // return a color with a 10 degree larger in hue than @color 
+	color:spin(@color, -10); // return a color with a 10 degree smaller hue than @color
+}
+#showcss{
+	.changeColor(#ef4a4b);
+}
