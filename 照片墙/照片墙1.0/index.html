@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>照片墙</title>
+		<link rel="stylesheet" href="index.css" />
+		<script src="index.js"></script>
+	</head>
+	<body onselectstart="return false">
+		<div class="wrap">
+			<!-- photo 负责平移旋转 -->
+			<div class="photo photo-center photo-back" onclick="turn(this)">
+			<!-- photo-wrap 负责翻转 -->
+				<div class="photo-wrap">
+					<div class="side side-front">
+						<p class="image">
+							<img src="images/cat.jpg" />
+						</p>
+						<p class="caption"></p>
+					</div>
+					<div class="side side-back">
+						<p class="desc">魏继阳最帅！！！</p>
+					</div>	
+				</div>
+			</div>
+
+			
+		</div>
+		
+	</body>
+</html>
