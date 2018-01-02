@@ -1,0 +1,53 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ball fall down </title>
+</head>
+<body>
+	<canvas  id="ball" style="margin:0 auto;"></canvas>
+</body>
+<script>
+	var ball = { x:512 , y:100 , r:20 , g:2, vx:-4, vy:-10 , color:"skyblue"};
+	window.onload=function(){
+		var canvas = document.getElementById("ball");
+
+		canvas.width = 1024;
+		canvas.height = 500;
+
+		var context = canvas.getContext("2d");
+
+	    setInterval(function(){
+			render(context);
+			update();
+		},50);
+	}
+
+
+	function update(){
+		ball.x += ball.vx;
+		ball.y += ball.vy;
+		ball.vy += ball.g;
+
+		if(ball.y>500-ball.r*5){
+			ball.y = 500-ball.r*5;
+			ball.vy = -ball.vy*0.7;
+		
+		}
+
+	}
+
+
+	function render(cxt){
+		cxt.clearRect(0,0,cxt.canvas.width,cxt.canvas.height);
+
+		cxt.fillStyle = ball.color;
+		cxt.beginPath();
+		cxt.arc( ball.x , ball.y , ball.r , 0 , 2*Math.PI);
+		cxt.closePath();
+
+
+		cxt.fill();
+
+	}
+</script>
+</html>

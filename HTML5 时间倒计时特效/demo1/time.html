@@ -1,0 +1,120 @@
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>time</title>
+</head>
+<body>
+	<canvas id="canvas" width="1024" height="768" style="border:1px solid #eee;display:block;margin:0 auto;">
+		当前浏览器不支持绘图Canvas 请更换浏览器重试
+	</canvas>
+
+	<script>
+		window.onload = function(){
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+
+			// canvas.width = 1024;
+			// canvas.height = 768;
+
+		//判断是否支持canvas
+					// if(convas.getContext("2d")){
+					// 	var context = canvas.getContext("2d");
+					// }
+		// 			// else{
+		// 			// 	alert("当前浏览器不支持绘图Canvas 请更换浏览器重试");
+		// 			// }
+
+		// 	context.beginPath();
+		// //使用context绘制
+		// 	context.moveTo(100,100);//笔尖放在这个位置
+		// 	context.lineTo(200,200);//从100，100画一条到700 700直线
+		// 	context.lineTo(100,200);
+		// 	context.lineTo(100,100);
+
+		// 	context.lineWidth=5;//线宽
+		// 	context.strokeStyle="red";
+		// 	context.stroke();
+
+		// 	context.closePath();
+
+		// //填充色
+			
+		// 	context.fillStyle = "rgb(2,100,100)";
+		// 	context.fill();
+
+
+		// 	context.beginPath();
+		// 	context.moveTo(300,300);
+		// 	context.lineTo(400,400);
+		// 	context.lineWidth=10;//线宽
+		// 	context.strokeStyle="black";
+		// 	context.stroke();
+		// 	context.closePath();
+
+
+// 画圆圈
+	// context.arc(   //绘制弧线
+
+	// 	centerx,    //中心点x坐标
+	// 	centery,	//中心点y坐标
+	// 	radius,		//半径
+	// 	startingAngle,   //从哪个弧度值开始
+	// 	endingAngle,		//结束弧度
+	// 	anticlockwise = false    //默认顺时针绘制弧线
+
+	// 	);
+
+
+	context.lineWidth = 5;
+	context.strokeStyle = "blue";
+	for(var i = 0;i<9;i++){
+		context.beginPath();
+		context.arc(50+i*100,60,40,0,2*Math.PI*(i+1)/10);
+		context.closePath();
+		context.stroke();
+	}
+
+	for(var i = 0;i<9;i++){
+		context.beginPath();
+		context.arc(50+i*100,180,40,0,2*Math.PI*(i+1)/10);
+		context.stroke();
+	}
+
+		for(var i = 0;i<9;i++){
+		context.beginPath();
+		context.arc(50+i*100,300,40,0,2*Math.PI*(i+1)/10,true);
+		context.closePath();
+		context.stroke();
+	}
+
+		for(var i = 0;i<9;i++){
+		context.beginPath();
+		context.arc(50+i*100,420,40,0,2*Math.PI*(i+1)/10,true);
+		
+		context.stroke();
+	}
+
+	context.fillStyle ="blue";
+	for(var i = 0;i<9;i++){
+		context.beginPath();
+		context.arc(50+i*100,540,40,0,2*Math.PI*(i+1)/10,true);
+		context.fill();
+		context.stroke();
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		}
+	</script>
+</body>
+</html>

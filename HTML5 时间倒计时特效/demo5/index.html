@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>time&ball</title>
+</head>
+<body style="height:100%;">
+	
+	<canvas style="display:block;margin:0 auto;padding-top:100px;" id="canvas" width="1024" height="700">	
+		您当前的浏览器并不支持Canvas ，请更换浏览器重试！
+	</canvas>
+	<div style="position:absolute;left:100px;top:80px;width:50%;height:700px; text-align:left; font-size:30px;font-weight:bold;">张燕洁</div>font-size:30px;font-weight:bold;
+	<div style="position:absolute;right:0px;top:200px;width:50%;height:700px;text-align:center;font-size:30px;font-weight:bold;">魏继阳</div>
+	<!-- <script src="digit.js"></script>
+	<script src="countdown.js"></script> -->
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+		var x = 500;
+		var y = 0;
+		var g=2;
+		// var vx=Math.pow(-1,Math.round(Math.random()*10))*5;
+		var vx = 5;
+		var vy=3;
+
+
+
+		// ctx.beginPath();
+		// ctx.fillStyle="skyblue";
+		// ctx.arc(0,0,50,0,360);
+		// ctx.fill();
+		// ctx.closePath();
+		// ctx.clearRect(500,500,600,600);
+
+
+		setInterval(function(){
+			createHeart(ctx);
+			update();
+		},50);
+		function createHeart(cxt){
+			ctx.clearRect(0,0,document.body.clientWidth,document.body.clientHeight);
+			ctx.beginPath();
+			ctx.fillStyle="red";
+			ctx.moveTo(75+x,40+y);
+			ctx.bezierCurveTo(75+x,37+y,70+x,25+y,50+x,25+y);
+			ctx.bezierCurveTo(20+x,25+y,22+x,62.5+y,22+x,55+y);
+			ctx.bezierCurveTo(20+x,80+y,40+x,102+y,75+x,120+y);
+			ctx.bezierCurveTo(110+x,102+y,130+x,80+y,128+x,55+y);
+			ctx.bezierCurveTo(128+x,55+y,130+x,25+y,100+x,25+y);
+			ctx.bezierCurveTo(85+x,25+y,75+x,37+y,75+x,40+y);
+			ctx.translate(ctx.width/2,ctx.height/2);
+			ctx.scale(0.9,0.9);
+
+			ctx.fill();
+			ctx.closePath();
+		}
+		function update(){
+			x += vx;
+			
+			// vy += g;
+
+		
+			console.log(x);
+			if(x>600){
+				x=500;
+				 location.reload();
+
+			}
+			
+		}
+	</script>
+</body>
+</html>
