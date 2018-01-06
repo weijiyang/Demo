@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<title>客户对比分析</title>
+<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="js/echarts-all.js"></script>
+</head>
+<body>
+<div class="chartBox" id="chart1" style="width: 900px; height: 240px;"></div>
+<script type="text/javascript">
+var topV = 30;
+var json1 = {
+	"xAxisData":["北京","广东","广西","河南","福建","天津","上海","陕西","云南","四川","湖南","贵州","湖北","甘肃","浙江","山东","青海","宁夏","江苏","内蒙古","海南","重庆","江西","安徽","辽宁","黑龙江","西藏","河北","山西","新疆","吉林"],
+	"dataList":[
+		["42","49","51","59","55","54","67","74","42","57","49","28","24","52","22","42","43","47","41","64","52","46","42","43","52","65","68","69","45","39","42"]
+		],
+	//关于rankList值的说明，yAxis之所以要加topV的值，是为了让背景图比柱状图高一些
+	//要注意option的配置yAxis的max值，也要相应的加高，参考89行，这的max值取的rankList[0].yAxis的值
+	"rankList":[
+                {xAxis:'陕西', yAxis:74+topV, symbolSize:20,symbol: 'image://images/top1.png'},
+                {xAxis:'河北', yAxis:69+topV, symbolSize:20,symbol: 'image://images/top2.png'},
+                {xAxis:'西藏', yAxis:68+topV, symbolSize:20,symbol: 'image://images/top3.png'},
+                {xAxis:'上海', yAxis:67+topV, symbolSize:20,symbol: 'image://images/top4.png'},
+                {xAxis:'黑龙江', yAxis:65+topV, symbolSize:20,symbol: 'image://images/top5.png'},
+                {xAxis:'内蒙古', yAxis:64+topV, symbolSize:20,symbol: 'image://images/top6.png'},
+
+            ]
+
+}
+var axisLine={lineStyle:{width:1,color:'#ccc',type:'solid'}};
+$(function(){
+	creatEchart.init();
+})
+var creatEchart = {
+	init:function(){
+		var myChart = echarts.init(document.getElementById('chart1'));
+		myChart.setOption(creatEchart.chart1(json1));
+
+	},
+	chart1:function(data){
+		var option = {
+		    color:["#79d6f1","#9fd06e"],
+		    tooltip : {
+			    trigger: 'axis',
+			    axisPointer : {
+		            type : 'none'
+		        }
+			},
+		    legend: {
+		        data:["通信及信息化收入"],
+		        y:'bottom',
+		        x:'50'
+		    },
+		    grid:{
+				borderWidth:0,
+				x:50,
+				x2:50,
+				y:30,
+				y2:65
+			},
+		    calculable :false,
+		    xAxis : [
+		        {
+		            type : 'category',
+		            splitLine:{
+			            show:false
+			        },
+			        axisTick:{
+			        	show:false
+			        },
+			        axisLabel:{
+			        	textStyle:{
+			        		color:'#4d4d4d'
+			        	},
+			        	rotate:'-45'
+			        },
+			        axisLine:axisLine,
+		            data:data.xAxisData
+		        }
+		    ],
+		    yAxis : [
+		        {
+		        	name:'(万元)',
+		        	nameTextStyle:{
+		        		color:'#666'
+		        	},
+		        	max:json1.rankList[0].yAxis,
+		            type : 'value',
+			        axisLabel:{
+			        	show:true
+			        },
+			        axisLine:axisLine,
+			        splitLine:{
+			            lineStyle:{
+			            	type:'solid',
+			            	color:'#f5f5f5'
+			            }
+			        }
+		        }
+		    ],
+		    series : [
+	        {
+	            name:'通信及信息化收入',
+	            type:'bar',
+	            barWidth:20,
+	            itemStyle: {
+	            	normal: {
+	            		barBorderRadius: [2,2,2,2],
+	            		label :{
+	            			show: true,
+	            			position: 'top',
+	            			textStyle:{color:"#4d4d4d"}
+	            		}
+	            	}
+	            },
+	            data: data.dataList[0],
+	            markPoint : {
+                data : json1.rankList
+            	}
+	        }
+	    ]};
+		return option;
+	}
+}
+</script>
+</body>
+</html>
