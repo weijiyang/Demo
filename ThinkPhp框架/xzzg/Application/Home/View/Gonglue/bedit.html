@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>baike xiugai</title>
+</head>
+<body>
+	<form action="bedit" method="post">
+	<volist name="t" id="t">
+	<h1>{$t.title}修改</h1><hr></br>
+
+			<input type="hidden" name="id" value="{$t.id}"/></br></br>
+			分类:<input type="text" name="fenlei" value="{$t.fenlei}"/></br></br>
+			标题:<input type="text" name="title" value="{$t.title}"/></br></br>
+			详情:<input type="textarea" name="content" value="{$t.content}"/></br></br>
+			标签:<input type="text" name="tag"value="{$t.tag}"/></br></br>
+			用户:<input type="text" name="user" value="{$t.user}"/></br></br>
+			<input type="submit" name="submit" value="提交修改"/>
+			</volist>
+	</form>
+</body>
+</html>

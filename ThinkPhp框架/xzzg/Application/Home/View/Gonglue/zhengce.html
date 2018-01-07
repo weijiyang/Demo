@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zhengce fenlei</title>
+</head>
+<body>
+	<h1>选址中国--攻略--政策<volist name="temp" id="t">--{$t.fenlei}</volist></h1></br>
+	查看分类</br></br><a href="__MODULE__/Gonglue/badd">添加</a>
+	<volist name="result" id="r">
+ 	<a href="__MODULE__/Gonglue/zlists?fenlei={$r.fenlei}">查看{$r.fenlei}</a></br><hr>
+ 	</volist>
+</body>
+</html>

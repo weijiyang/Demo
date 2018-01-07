@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>information list</title>
+	<style>
+	td{
+		width:100px;
+		text-align:left;
+	}
+	</style>
+</head>
+<body>
+	<h1>资讯展示&nbsp;&nbsp;&nbsp;<a href="add">添加</a></h1></br><hr>
+	<table>
+		<tr>
+			<td>题目</td>
+			<td>简介</td>
+			<td>详情</td>
+			<td>时间</td>
+			<td>标签</td>
+			<td>操作</td>
+		</tr>
+		<volist name="inf" id="i">
+		<tr>
+			<td>{$i.title}</td>
+			<td>{$i.summary}</td>
+			<td>{$i.content}</td>
+			<td>{$i.time}</td>
+			<td>{$i.tag}</td>
+			<td><a href="edit?id={$i.id}">修改</a>&nbsp;<a href="del?id={$i.id}">删除</a></td>
+		</tr>
+		</volist>
+		
+	</table>
+</body>
+</html>

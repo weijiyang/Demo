@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tag list</title>
+	<style>
+	td{
+		width:100px;
+		text-align:left;
+	}
+	</style>
+</head>
+<body>
+	<h1>标签展示&nbsp;&nbsp;&nbsp;<a href="add">添加</a></h1></br><hr>
+	<table>
+		<tr>
+			<td>序号</td>
+			<td>标签名称</td>
+			
+		</tr>
+		<?php static $num=1;?>
+		<volist name="inf" id="i">
+		<tr>
+			<td><?php echo $num;$num=$num+1;?></td>
+			<td>{$i.tag}</td>
+			
+			<td><a href="edit?id={$i.id}">修改</a>&nbsp;<a href="del?id={$i.id}">删除</a></td>
+		</tr>
+		</volist>
+		
+	</table>
+</body>
+</html>
