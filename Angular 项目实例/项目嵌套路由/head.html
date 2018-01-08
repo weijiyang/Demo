@@ -1,0 +1,39 @@
+
+<style>
+	ul{
+		width:100%;
+		overflow:hidden;
+		list-style-type:none;
+		background:black;
+	}
+	ul li{
+		display:inline-block;
+		width:100px;
+		height:50px;
+		line-height:50px;
+		margin-right:10px;
+		font-size:20px;
+		font-weight:bold;
+		background:black;
+		text-align:center;
+	}
+	ul li:hover{
+		opacity:0.6;
+	}
+	ul li a{
+		color:white;
+	}
+</style>
+<body>
+	<div class="head">
+		<ul>
+			<!-- href 绑定的是超链接 -->
+			<!-- <li><a href="#/first">first</a></li>
+			<li><a href="#/second">second</a></li> -->
+
+			<!-- ui-sref 绑定的是模块名 -->
+			<li><a ui-sref="topic.content_first">first</a></li>   
+			<li><a ui-sref="topic.content_second">second</a></li>
+		</ul>
+	</div>
+</body>
