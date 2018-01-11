@@ -1,6 +1,0 @@
-[ 2016-07-25T15:02:18+08:00 ] 127.0.0.1 /xzzg/xzzg/index.php/__MODULE__/Gonglue/blists.html
-INFO: [ app_init ] --START--
-INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
-INFO: [ app_init ] --END-- [ RunTime:0.000405s ]
-ERR: 无法加载模块:__MODULE__
-
