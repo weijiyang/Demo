@@ -1,0 +1,76 @@
+@charset "utf-8";
+body,ul,dl,dd,dt,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,img,td,div,input{margin:0;padding:0;}
+ul,ol,li{list-style-type:none}
+li{vertical-align:0}
+h1,h2,h3,h4,h5,h6{ font-weight:normal}
+cite,i,b{font-style:normal;}
+a{outline-style:none;color:#333;text-decoration:none}
+a:hover{color:#333; text-decoration:none}
+body,input,select,textarea{ font-size:14px; font-family: "Microsoft Yahei";outline:none;}
+img{border:none;}
+/*initial*/
+.clearfix:after { visibility:hidden; display:block; font-size:0; content:""; clear:both; height:0;}
+.clearfix{ *zoom:1;} /*兼容ie6*/
+.clear{ clear:both;}
+.fl{ float:left; display:inline;}
+.fr{ float:right; display:inline;}
+.icon{background-image: url(../images/icon.png); background-repeat: no-repeat; display: inline-block;}
+/*content*/
+.all{width:100%;}
+.content{width: 100%;}
+/*tab栏*/
+.tab{margin-top: 25px;}
+.tab li{display: inline-block;font-size:12px;width: 120px;height:30px;line-height:30px;text-align:center;background-color: #D8D8D8;color: #5F5F5F;border-top-left-radius:10px;border-top-right-radius:10px;cursor: pointer;margin-right: 35px;}
+.tab li.on{background-color: #4A90E2;color: #fff;}
+.tabCon{display: none;}
+/*contentBox*/
+.contentBox{border: 1px solid #D8D8D8;}
+/*search*/
+.formBox{padding:6px 0;}
+.formBox li{position:relative; margin-right: 5px; z-index: 80; line-height: 32px; display: inline-block; float: left; color: #333;}
+.select{border:1px solid #b9c4ca; background: #f5f5f5; line-height: 30px; border-radius: 3px;  padding:0 8px 0 6px; display: inline-block; cursor: pointer;}
+.select-text{height: 30px; line-height: 30px; display: inline-block; width: 116px; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;}
+.select .icon{width: 18px; height: 30px; background-position: -89px -103px;}
+.select-layer{ position: absolute; z-index:89; top:32px; padding-top: 2px; background: #fff; right: 0; width: 100%;}
+.hideLayer .select-layer{display: none;}
+.hover .select-layer{display: block;}
+.layer-box{border:1px solid #d9dbdc; border-radius: 3px;box-shadow:0 0 3px #d9dbdc;  padding-bottom: 4px; }
+.formBox .tree{margin-top: 4px;}
+.formBox li .tree li{display: block; float: none; margin-right: 0; line-height: 26px; padding:1px 0; cursor: pointer;}
+.formBox .tree p{padding-left: 15px; display: block;}
+.formBox li .tree p.on,.formBox li .tree p.hover{background: #0080cc; color:#ffffff; }
+.childNode{display: none; margin:2px 0;}
+.show .childNode,.fastNode .childNode{display: block;}
+.firstNode .icon{background-position: -118px -149px; position: absolute; right: 6px; top:6px; width: 16px; height: 16px;}
+.show .firstNode .icon{background-position: -88px -149px;}
+.tree .hasChild li p{padding-left: 30px;}
+.select-checkbox .tree input{vertical-align: -2px;}
+.select-checkbox .tree input.checked{background-position: -37px -151px;}
+.searchBox{text-align: center; padding-top: 6px;}
+.search-con{display: inline-block; padding:0 8px; border:1px solid #dedede; height: 26px;}
+.searchBox .search-text{width: 95px; height: 26px; color: #ccc; line-height: 26px; border:0;}
+.searchBox  .searchBtn{width: 18px; height: 26px; background-position: -188px -108px; cursor: pointer;}
+.formBox .Wdate{width:140px; height: 32px; line-height: 32px; padding-left: 6px; border:1px solid #b9c4ca; border-radius: 2px; cursor: pointer; background: url(../images/time-icon.png) #f5f5f5 116px 7px no-repeat;}
+.formBox .filter_text{width:150px; height: 32px; line-height: 32px; padding-left: 6px; padding-right: 22px; border:1px solid #b9c4ca; border-radius: 2px; cursor: pointer; background: url(../images/down2-icon.png) 126px 10px no-repeat;}
+.formBox .input_text{width:160px; height: 32px; line-height: 32px; background: #f5f5f5; color: #333; padding:0 6px; border:1px solid #b9c4ca; border-radius: 2px; }
+.treeScroll{height: 165px;}
+.fastNode p.firstNode{background: #f2f4f4;}
+.tree .hasChild.fastNode li p{padding-left: 15px;}
+.fastNode .childNode{display: block;}
+.btn{display: inline-block; font-size: 14px; cursor: pointer; height: 28px; line-height: 30px;  color: #fff; width: 90px; border-radius: 2px; text-align: center;}
+.blue-btn{background: #0080cc;}
+.blue-btn:hover{background: #00436a; color: #fff;}
+.select-btn{text-align: center; padding:10px 0;}
+.clearBtn{display: inline-block; height: 26px; line-height: 26px; text-align: center; border:1px solid #dedede; color: #4d4d4d;}
+.select-btn .blue-btn{height: 28px; line-height: 28px;}
+.formBox .select-btn .btn{width: 55px; margin:0 4px; cursor: pointer;}
+.formBox .blue-btn{width: 60px; height: 32px; line-height: 32px; margin-left: 8px;}
+/*pageList*/
+.pageList{padding:20px 6px; text-align: right;}
+.pageList .pageItem{color: #7a7a7a; margin-left: 10px;}
+.pageList .page_input_text{height: 20px; line-height: 20px; vertical-align: -3px\9;*vertical-align: -3px; margin:0 2px; width: 48px; padding-left: 4px; border:1px solid #dbe1e5;}
+.pageList .sureBtn{display: inline-block; height:18px; line-height: 18px; border:1px solid #dbe1e5; color: #565656; width: 40px; text-align:center; }
+.pageList .pageBtn{cursor: pointer;}
+.pageList a{margin:0 4px; }
+.curPage,.pageList a{color: #565656;}
+.pageList a.notClick{color:#7a7a7a; }

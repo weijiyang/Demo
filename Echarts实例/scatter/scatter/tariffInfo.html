@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>资费信息</title>
+    <link rel="stylesheet" href="css/public.css">
+    <link rel="stylesheet" href="css/tariff.css">
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/tariff.js"></script>
+</head>
+<body>
+<div class="all clearfix">
+    <div class="content clearfix">
+        <!--tab栏-->
+        <div class="tabBox">
+            <ul class="tab">
+                <li class="on">资费查询</li>
+                <li>竞品信息</li>
+                <li>指标对比</li>
+                <li>资费批复</li>
+            </ul>
+        </div>
+        <!--contentBox-->
+        <div class="contentBox">
+            <div>
+                <!--资费查询-->
+                <div class="tabCon" style="display: block;">
+                    <!--查询条件-->
+                    <div class="formSelect">
+                        <div class="tariffInquire clearfix">
+                            <div class="tariffInquireCode competeText fl">资费名称<input type="text"></div>
+                            <div class="tariffInquireCode competeText fl">资费编码<input type="text"></div>
+                            <a href="javascript:void(0)" class="blue-btn fl btn">查询</a>
+                            <a href="javascript:;" class="downLoad fr"></a>
+                        </div>
+                        <ul class="formBox com-box clearfix comSelect tariffComSelect">
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">区域</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">目标市场</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">业务类型</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><span class="comProvince competeText">费用档次</span><input class="tariffInput" type="text">—<input class="tariffInput" type="text"></li>
+                        </ul>
+                        <ul class="formBox com-box clearfix comSelect">
+                        <li class="formItem">
+                            <div class="fl comProvince competeText">品牌</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                            <div class="select-layer select-radio">
+                                <div class="layer-box">
+                                    <div class="tree oneLevel">
+                                        <ul>
+                                            <li class="rootNode" id="23"><p>北京</p></li>
+                                            <li class="rootNode" id="344"><p>上海</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="formItem">
+                            <div class="fl comProvince competeText">套餐类型</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                            <div class="select-layer select-radio">
+                                <div class="layer-box">
+                                    <div class="tree oneLevel">
+                                        <ul>
+                                            <li class="rootNode" id="23"><p>北京</p></li>
+                                            <li class="rootNode" id="344"><p>上海</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="formItem">
+                            <div class="fl comProvince competeText">卡品系列</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                            <div class="select-layer select-radio">
+                                <div class="layer-box">
+                                    <div class="tree oneLevel">
+                                        <ul>
+                                            <li class="rootNode" id="23"><p>北京</p></li>
+                                            <li class="rootNode" id="344"><p>上海</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><span class="comProvince competeText">生效时间</span><input value="" class="Wdate" type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+                            —<input value="" class="Wdate" type="text" onclick="WdatePicker({dateFmt:'yyyy-MM-dd'})">
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="competeContent">
+                        <table class="competeTable">
+                            <tr><th>待售</th><th>在售</th><th>停售</th><th>下线</th></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!--竞品信息-->
+                <div class="tabCon">
+                    <!--查询条件-->
+                    <div class="formSelect">
+                        <ul class="formBox com-box clearfix comSelect">
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">省份：</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <a href="javascript:;" class="downLoad fr"></a>
+                        </ul>
+                    </div>
+                    <div class="competeContent">
+                        <table class="competeTable">
+                            <tr><th>省份</th><th>标题</th><th>运营商</th><th>日期</th><th>连接</th><th>附件</th></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!--指标对比-->
+                <div class="tabCon">
+                    <!--查询条件-->
+                    <div class="formSelect">
+                        <ul class="formBox com-box clearfix comSelect">
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">省份：</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <a href="javascript:;" class="downLoad fr"></a>
+                        </ul>
+                    </div>
+                    <div class="competeContent">
+                        <table class="competeTable">
+                            <tr><th>运营商</th><th>收入</th><th>用户</th><th>4G用户</th><th>DOU</th><th>4G用户DOU</th><th>流量单价</th></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <!--资费批复-->
+                <div class="tabCon">
+                    <!--查询条件-->
+                    <div class="formSelect">
+                        <ul class="formBox com-box clearfix comSelect">
+                            <li class="formItem">
+                                <div class="fl comProvince competeText">省份：</div><div class="select clearfix"><span class="select-text fl" title="请选择"><span id="4949">请选择</span></span><span class="icon fl"></span></div>
+                                <div class="select-layer select-radio">
+                                    <div class="layer-box">
+                                        <div class="tree oneLevel">
+                                            <ul>
+                                                <li class="rootNode" id="23"><p>北京</p></li>
+                                                <li class="rootNode" id="344"><p>上海</p></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <a href="javascript:;" class="downLoad fr"></a>
+                        </ul>
+                    </div>
+                    <div class="competeContent">
+                        <table class="competeTable">
+                            <tr><th>批复日期</th><th>省公司</th><th>资费批复文件名</th><th>资费批复文件号</th><th>批复资费名称</th><th>资费批复文件</th><th>资费评估报告</th></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="pageList">
+                <span class="pageItem">共<span>15</span>条信息</span>
+                <span class="pageItem">共<span class="curPage">1</span>/<span>3</span></span>
+                <span class="pageItem"><a href="" class="pageBtn notClick pre">上一页</a><a href="" class="pageBtn next">下一页</a></span>
+                <span class="pageItem">到第<input type = "text" class="page_input_text">页</span>
+                <span class="pageBtn sureBtn">确定</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
