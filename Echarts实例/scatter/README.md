@@ -1,3 +1,2 @@
-# Echarts scatter 实例
-    scatter文件实现的是scatter 散装图中更改formatter方法，自定义显示样式。
-    map 第一次实现地图图表
+# Echarts 实例
+    这个文件夹主要放置项目开发中我遇到的一些典型的图表及其相关代码。
