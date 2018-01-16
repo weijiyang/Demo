@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	canvas{
+		border:1px solid black;
+	}
+</style>
+<script type="application/javascript">
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+
+			//填充三角形
+			ctx.beginPath()
+			ctx.moveTo(25,25)
+			ctx.lineTo(105,25)
+			ctx.lineTo(25,105)
+			ctx.fill()
+
+
+			//描边三角形
+			ctx.beginPath()
+			ctx.moveTo(125,125)
+			ctx.lineTo(125,45)
+			ctx.lineTo(45,125)
+			ctx.closePath() //stoke方法并不会闭合图形  如果不加这句话 就会出现两条黑线的情况
+			ctx.stroke()
+		}
+	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas" width="150" height="150"> </canvas>
+</body>
+</html>
