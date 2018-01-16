@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	canvas{
+		border:1px solid black;
+	}
+</style>
+<script type="application/javascript">
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+
+			ctx.fillRect(25,25,100,100)//填充一个矩形块
+			ctx.clearRect(45,45,60,60)//清除一个矩形块并设为透明
+			ctx.stokeRect(50,50,50,50)//绘制一个边框
+		}
+	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas" width="150" height="150"> </canvas>
+</body>
+</html>
