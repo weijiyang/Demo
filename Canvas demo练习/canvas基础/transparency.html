@@ -1,0 +1,41 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("tutorial");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			// 画背景
+			ctx.fillStyle = "#FD0"
+			ctx.fillRect(0,0,75,75)
+			ctx.fillStyle = "#6C0"
+			ctx.fillRect(75,0,75,75)
+			ctx.fillStyle  = "#09F"
+			ctx.fillRect(0,75,75,75)
+			ctx.fillStyle = "#F30"
+			ctx.fillRect(75,75,75,75)
+			ctx.fillStyle = "#FFF"
+
+			//设计透明度
+			ctx.globalAlpha = 0.2;
+			//画半透明圆
+			for(var i = 0 ; i < 7 ; i++){
+				// ctx.globalAlpha = 0.2;
+				ctx.beginPath()
+				ctx.arc(75,75,10+10*i,0,Math.PI*2,true)
+				ctx.fill();
+			}
+
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="tutorial"></canvas>
+</body>
+</html>
