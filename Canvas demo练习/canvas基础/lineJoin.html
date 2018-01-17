@@ -1,0 +1,35 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			var lineJoin = ['round' , 'bevel' , 'miter'];
+
+			for(var i=0 ; i<lineJoin.length;i++){
+				ctx.lineJoin = lineJoin[i];
+				ctx.lineWidth = 10;
+				ctx.beginPath()
+				ctx.moveTo(-5,5+i*40)
+				ctx.lineTo(35,45+i*40)
+				ctx.lineTo(75,5+i*40)
+				ctx.lineTo(115,45+i*40)
+				ctx.lineTo(155,5+i*40)
+				ctx.stroke()
+			}
+			
+			
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
