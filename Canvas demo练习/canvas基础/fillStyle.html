@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="application/javascript">
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+
+			for(var i=0;i<6;i++){
+				for(var j=0;j<6;j++){
+					ctx.fillStyle = 'rgb(' + Math.floor(255-42.5*i) + "," + Math.floor(255-42.5*j) + ",0";
+					ctx.fillRect(j*25,i*25,25,25)
+
+				}
+			}
+		}
+	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas" width="150" height="150"> </canvas>
+</body>
+</html>
