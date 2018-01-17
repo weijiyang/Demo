@@ -5,7 +5,7 @@
 </head>
 <script>
 	function draw(){
-		var canvas = document.getElementById("tutorial");
+		var canvas = document.getElementById("canvas");
 		if(canvas.getContext){
 			var ctx = canvas.getContext("2d")
 			var lineCap = ['butt' , 'round' , 'square'];
@@ -37,6 +37,6 @@
 	}	
 </script>
 <body onload = "draw()">
-	<canvas id="tutorial"></canvas>
+	<canvas id="canvas"></canvas>
 </body>
 </html>
