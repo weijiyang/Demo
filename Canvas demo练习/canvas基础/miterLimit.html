@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			var lineJoin = 'miter';
+			ctx.miterLimit = 1;//miterLimit 属性就是用来设定外延交点与连接点的最大距离，如果交点距离大于此值，连接效果会变成了 bevel。
+			ctx.lineJoin = lineJoin[i];
+			ctx.lineWidth = 10;
+			ctx.beginPath()
+			
+			for(var i = 0; i<60 ; i++){
+				if(i%2 == 0){
+					ctx.lineTo(20+i*20,80)
+				}
+				else{
+					ctx.lineTo(20+i*20,40)
+				}
+			}
+			ctx.stroke()
+			
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
