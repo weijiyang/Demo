@@ -1,0 +1,54 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	canvas{
+		width:500;
+		height:500;
+		border:1px solid black;
+	}
+</style>
+<script>
+ 	
+ 	// function draw(){
+ 	// 	var canvas = document.getElementById("canvas");
+ 	// 	var ctx = canvas.getContext("2d");
+ 	// 	//创建新的 images 对象 用作图案
+ 	// 	var img = new Image();
+ 	// 	img.src = 'images/me.jpg';
+ 	// 	img.onload = function(){
+ 	// 		//创建图案
+ 	// 		var ptrn = ctx.createPattern(img , 'no-repeat')
+ 	// 		ctx.fillStyle = ptrn ;
+ 	// 		ctx.fillRect(0,0,500,500)
+ 	// 	}
+
+ 	// }
+
+
+ 	function draw(){
+ 		var canvas = document.getElementById("canvas");
+ 		var ctx = canvas.getContext("2d");
+ 		var canvas_img = document.createElement("canvas");
+ 		var ctx_img = canvas_img.getContext("2d");
+ 		canvas_img.width = 300;
+ 		canvas_img.height  = 300;
+ 		//创建新的 images 对象 用作图案
+ 		var img = new Image();
+ 		img.src = 'images/me.jpg';
+ 		img.onload = function(){
+ 			ctx_img.drawImage(img,0,0,300,300)
+ 			//创建团
+ 			var pattern = ctx.createPattern(canvas_img ,'repeat')
+ 			ctx.fillStyle = pattern ;
+ 			ctx.fillRect(0,0,500,500)
+ 		}
+
+ 	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
