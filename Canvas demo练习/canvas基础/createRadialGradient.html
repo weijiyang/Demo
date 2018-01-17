@@ -1,0 +1,34 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	canvas{
+		border:1px solid black;
+	}
+</style>
+<script>
+ 	
+ 	function draw(){
+ 		var canvas = document.getElementById("canvas");
+ 		var ctx = canvas.getContext("2d");
+
+ 		//创建渐变
+ 		var gradient  = ctx.createRadialGradient(45,45,10,52,50,30)
+ 		gradient.addColorStop(0,'#A7D30C')
+ 		gradient.addColorStop(0.9,'#019F62')
+ 		gradient.addColorStop(1,'rgba(1,159,98,0)')
+
+ 		// 画图形
+
+ 		ctx.fillStyle = gradient;
+		ctx.fillRect(0,0,150,150);
+
+
+ 	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
