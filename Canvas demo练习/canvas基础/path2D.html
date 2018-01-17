@@ -21,8 +21,19 @@
 			circle.moveTo(125,35)
 			circle.arc(100,35,25,0,2*Math.PI)
 
+
+
 			ctx.stroke(rectangle)
 			ctx.fill(circle)
+
+
+			//Path2D 也可以使用svg路径
+			var p = new Path2D('M70 70 h 80 v 80 h -80 Z')
+			ctx.fill(p)
+
+
+
+	
 		}
 	}
 </script>
