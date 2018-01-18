@@ -1,0 +1,29 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			
+			var img = new Image();
+			var bg = new Image();
+			img.onload = function(){
+				ctx.drawImage(img,0,0,300,300,80,60,150,150)
+				ctx.drawImage(bg,0,0,300,300)
+			}
+			img.src = "images/me.jpg"
+			bg.src="images/bg.png"
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>
