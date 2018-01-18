@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			
+			ctx.beginPath()
+			ctx.arc(50,50,30,0,Math.PI*2,true)
+			ctx.arc(50,50,15,0,Math.PI*2,true)
+			ctx.fill("evenodd")
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
