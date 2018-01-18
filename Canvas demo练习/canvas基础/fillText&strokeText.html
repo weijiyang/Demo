@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d")
+			
+			ctx.font = "48px serif"
+			ctx.fillText("Hello world",20,50)
+
+
+			ctx.strokeText("Hello world", 20 , 100)
+		}
+		else{
+			alert("unsupport canvas")		
+		}
+	}	
+</script>
+<body onload = "draw()">
+	<canvas id="canvas"></canvas>
+</body>
+</html>
