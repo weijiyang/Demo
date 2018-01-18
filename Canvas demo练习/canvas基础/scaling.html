@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="application/javascript">
+	function draw(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+			ctx.fillStyle = "#f00"
+			ctx.fillRect(0,0,100,100);
+
+
+			ctx.translate(250,0)
+			ctx.scale(0.75,0.75)
+			ctx.fillRect(0,0,100,100);
+		}
+			   
+	}
+</script>
+<body onload="draw()">
+	<canvas id="canvas" width="600" height="600"> </canvas>
+</body>
+</html>
