@@ -12,7 +12,8 @@
 			var img = new Image();
 			var bg = new Image();
 			img.onload = function(){
-				ctx.drawImage(img,0,0,300,300,80,60,150,150)
+				ctx.drawImage(img,400,0)
+				ctx.drawImage(img,0,0,150,150,80,60,100,100)
 				ctx.drawImage(bg,0,0,300,300)
 			}
 			img.src = "images/me.jpg"
@@ -24,6 +25,6 @@
 	}	
 </script>
 <body onload = "draw()">
-	<canvas id="canvas" width="500" height="500"></canvas>
+	<canvas id="canvas" width="1000" height="500"></canvas>
 </body>
 </html>
