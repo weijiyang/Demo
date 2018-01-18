@@ -9,8 +9,9 @@
 		if(canvas.getContext){
 			var ctx = canvas.getContext("2d")
 			
-			var text = ctx.measureText("foo") //获取参数字体的各个属性
-			alert(text.width)
+			ctx.font = "48px serif"
+			ctx.textBaseline = "hanging"
+			ctx.strokeText("Hello World",0,100)
 		}
 		else{
 			alert("unsupport canvas")		
