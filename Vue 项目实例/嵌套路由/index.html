@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script src="http://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+</head>
+<body> 
+    <div id="box">
+        <p>
+            <router-link to="/home">home</router-link>
+            <router-link to="/news">news</router-link>
+        </p>
+          <router-view></router-view>
+    </div>
+
+    <!-- 模板抽离出来 -->
+    <template id="home">
+        <!-- 注意：组件只能有一个根元素，所以我们包装到这个div中 -->
+        <div>
+            <h2>首页</h2>
+             <router-link to="/home/login">登录</router-link>
+            <router-link to="/home/reg">注册</router-link>
+            <!-- 路由匹配到的组件将渲染在这里 -->
+            <router-view></router-view>
+        </div>
+    </template>
+
+    <template id="news">
+        <div>新闻</div>
+    </template>
+
+    <template id="login">
+        <div>登录界面</div>
+    </template>
+    <template id="reg">
+        <div>注册界面</div>
+    </template>
+
+    <script type="text/javascript">
+        // 1. 定义（路由）组件。
+        const Home = { template: '#home' };
+        const News = { template: '#news' };
+
+        const Login = { template: '#login' };
+        const Reg = { template: '#reg' };
+
+        // 2. 定义路由
+        const routes = [
+             { path: '/', redirect: '/home' },
+            { 
+                path: '/home', 
+                component: Home, 
+                children:[
+                    { path: '/home/login', component: Login},
+                    { path: '/home/reg', component: Reg}
+                ]
+            },
+            { path: '/news', component: News}
+        ]
+
+        // 3. 创建 router 实例，然后传 `routes` 配置
+        const router = new VueRouter({
+            routes // （缩写）相当于 routes: routes
+        })
+
+
+        // 4. 创建和挂载根实例。
+        // 记得要通过 router 配置参数注入路由，
+        // 从而让整个应用都有路由功能
+        const app = new Vue({
+          router
+        }).$mount('#box')
+
+        // 现在，应用已经启动了！
+    </script>
+</body>
+</html>
