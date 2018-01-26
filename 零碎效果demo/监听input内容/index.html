@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>hangge.com</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="jquery-1.8.0.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#comment').on('input propertychange', function() {
+         var count = $(this).val().length;
+         $('#tip').html("已输入 "+ count +" 个字。");
+        });
+
+         $('#test').on('input propertychange', function() {
+         var count = $(this).val().length;
+         $('#tip_test').html("已输入 "+ count +" 个字。");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <textarea id="comment" rows="5" cols="50"></textarea>
+    <input type="text value="" id="test" />
+    <br>
+    <div id="tip"></div>
+    <div id="tip_test"></div>
+  </body>
+</html>
