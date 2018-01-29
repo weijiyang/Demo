@@ -1,0 +1,25 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>嵌套路由</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+	<script src="js/index.vue"></script>
+	
+</head>
+<body>
+		<div id="app">
+			<p>{{ message }}</p>
+		   <todo></todo>
+		</div>
+		<script>
+		var vue = new Vue({
+			el: '#app',
+			data : {
+				message:"this is message"
+			}
+		})
+
+		</script>
+</body>
+</html>
