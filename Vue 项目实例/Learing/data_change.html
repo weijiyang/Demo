@@ -6,16 +6,37 @@
 	<script src="vue-router.js"></script>
 </head>
 <body>
+
+	<div id="app">
+		<p>{{ unchange.content }}</p>
+		<button @click="unchange.content = 'ichanged'">change it</button>
+	</div>
 	<script>
-		var data = { a : 1 };
+		// var data = { a : 1 };
+		// var vm = new Vue({
+		// 	data : data
+		// })
+		// console.log("data.a == vm.a : " + (data.a == vm.a));
+		// vm.a = 2;
+		// console.log(data.a)
+		// data.a = 3;
+		// console.log(vm.a)
+
+
+
+		var unchange = {
+			content : "bar"
+		}
+		//阻止现有属性的修改
+		Object.freeze(unchange)
 		var vm = new Vue({
-			data : data
+			el: "#app",
+			data () {
+				return {
+					unchange
+				}
+			}
 		})
-		console.log("data.a == vm.a : " + (data.a == vm.a));
-		vm.a = 2;
-		console.log(data.a)
-		data.a = 3;
-		console.log(vm.a)
 	</script>
 </body>
 </html>
