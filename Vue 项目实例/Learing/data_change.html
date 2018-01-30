@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>嵌套路由</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+</head>
+<body>
+	<script>
+		var data = { a : 1 };
+		var vm = new Vue({
+			data : data
+		})
+		console.log("data.a == vm.a : " + (data.a == vm.a));
+		vm.a = 2;
+		console.log(data.a)
+		data.a = 3;
+		console.log(vm.a)
+	</script>
+</body>
+</html>
