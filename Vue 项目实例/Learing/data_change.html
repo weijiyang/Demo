@@ -28,14 +28,20 @@
 			content : "bar"
 		}
 		//阻止现有属性的修改
-		Object.freeze(unchange)
+		// Object.freeze(unchange)
 		var vm = new Vue({
 			el: "#app",
-			data () {
+			data(){
 				return {
-					unchange
+					unchange		
 				}
 			}
+		})
+
+		console.log("vm.$data === unchange : " + (vm.$data.unchange === unchange))
+		console.log("vm.$el : " + (vm.$el == document.getElementById("app")))
+		vm.$watch('unchange',function( newVal , oldVal ){
+			console.log(oldVal + " => " + newVal)
 		})
 	</script>
 </body>
