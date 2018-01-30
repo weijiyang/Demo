@@ -1,3 +1,5 @@
 Vue.component('todo-item', {
-      template: '<li>这是一个 todo 项</li>'
-    })
+  props: ['todo'],//从父级传过来的属性
+  template: '<li>{{ todo.text }}</li>'
+})
+
