@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>嵌套路由</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+</head>
+<body>
+	
+	<div id="example">
+		<template v-if="showInput == 1">
+			<P>TEXT</P>
+			<input type="text" placeholder="这里填写文本信息" />
+		</template>
+		<template v-else-if="showInput == 2">
+			<P>EMAIL</P>
+			<input type="email" placeholder="这里填写email信息" />
+		</template>
+		<template v-else>
+			<lable>这里结构不同</labe><br/>
+			<input type="email" placeholder="这里填写email信息" />
+		</template>
+		<br/>
+		<button @click="changeMsg_double">点我切换两种相同结构template模板</button>
+		<button @click="changeMsg_tribble" >点我切换不同结构template模板</button>
+	</div>
+	<script>
+		var vm = new Vue({
+			el : "#example",
+			data : {
+				showInput : 1
+			},
+			methods : {
+				changeMsg_tribble : function(){
+					if(this.showInput >2) this.showInput = 0;
+					this.showInput ++ ;
+				},
+				changeMsg_double : function(){
+					if(this.showInput >1) this.showInput = 0;
+					this.showInput ++;
+				}
+			}
+		})
+	</script>
+</body>
+</html>
