@@ -10,6 +10,12 @@
 	<div id="app">
 		<p>{{ unchange.content }}</p>
 		<button @click="unchange.content = 'ichanged'">change it</button>
+
+		<p>original message : {{message}}</p>
+		<p>computed reversed message : {{ computedMessage }}</p>
+		<p> methods reversed message : {{ methodsMessage() }}</p>
+		<p>computed & methods : computedTime {{ computedTime }}</p>
+		<p>computed & methods : methodsTime{{ methodsTime() }}</p>
 	</div>
 	<script>
 		// var data = { a : 1 };
@@ -33,16 +39,41 @@
 			el: "#app",
 			data(){
 				return {
-					unchange		
+					unchange,
+					message : "this is the message"		
+				}
+			},
+			created : function(){
+				//钩子函数  在实例化之后调用
+				console.log( "the content is : " + this.unchange.content )
+			},
+			computed : { //类似更改对vm.reversedMessage属性绑定的getter函数,与message变量声明了依赖关系，更改message值会重新reversedMessage
+				computedMessage : function(){
+					return this.message.split("").reverse().join("");
+				},
+				computedTime : function(){
+					return Date.now();
+				}
+			},
+			methods : {
+				methodsMessage:function(){
+					return "METHODS : " + this.message;
+				},
+				methodsTime :function(){
+					return Date.now()
 				}
 			}
 		})
 
 		console.log("vm.$data === unchange : " + (vm.$data.unchange === unchange))
 		console.log("vm.$el : " + (vm.$el == document.getElementById("app")))
-		vm.$watch('unchange',function( newVal , oldVal ){
+		vm.$watch('unchange.content',function( newVal , oldVal ){
 			console.log(oldVal + " => " + newVal)
 		})
+
+
+		//钩子函数
+
 	</script>
 </body>
 </html>
