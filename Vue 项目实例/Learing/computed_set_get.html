@@ -7,6 +7,36 @@
 </head>
 <body>
 
-
+	<div id="example">
+		<p>firstName : {{firstName}}</p>
+		<p>lastName : {{lastName}}</p>
+		<p>fullName : {{fullName}}</p>
+		<button href="#" @click="changeMsg">点我换信息~</button>
+	</div>
+	<script>
+		var vm = new Vue({
+			el : "#example",
+			data : {
+				firstName : "weijiyang",
+				lastName : "zhangyanjie"
+			},
+			computed : {
+				fullName : {
+					get: function(){
+						return this.firstName + " love " + this.lastName;
+					},
+					set : function( newVal ){
+						this.firstName = newVal[0];
+						this.lastName = newVal[newVal.length-1];
+					}
+				}
+			},
+			methods : {
+				changeMsg : function(){
+					this.fullName = ["我" ,"爱" , "你"];
+				}
+			}
+		})
+	</script>
 </body>
 </html>
