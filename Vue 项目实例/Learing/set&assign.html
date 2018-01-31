@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>set  assign</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+</head>
+<body>
+	
+	<div id="example">
+		<p>{{ showMsg }}</p>
+	</div>
+	<script>
+	//vue 是不支持根元素动态添加响应式属性的
+		// var vm = new Vue({
+		// 	el : "#example",
+		// 	data :{
+		// 		a : "this is a"
+		// 	},
+		// 	computed : {
+		// 		showMsg : function(){//用来判断响应式
+		// 			var msg = this.a;
+		// 			console.log("响应判断");
+		// 		}
+		// 	}
+		// })
+
+
+		//但是可以封装到一个对象中
+		var vm = new Vue({
+			el : "#example",
+			data : {
+				useProfile :{
+					name : 'weijiyang'
+				}
+			},
+			computed : {
+				showMsg : function(){
+					var temp = this.useProfile;
+					console.log("已添加响应式");
+				}
+			}
+		})
+	</script>
+</body>
+</html>
