@@ -1,0 +1,60 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>嵌套路由</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>
+	<script src="js/on&$emite.vue"></script>
+	
+</head>
+<body>
+	<div id="todo-list-example">
+		<input type="text" 
+			v-model= "newTodoText"
+			v-on:keyup.enter = "addNewTodo"
+			placeholder = "Add a todo"
+		/>
+		<ul>
+			<li v-for="(todo,index) in todos" v-bind:key="todo.key" v-bind:title="todo.title" v-on:remove="todos.splice(index,1)" v-on:click="$emit('remove')">
+				
+			</li>
+		</ul>
+	</div>
+	<script>
+		new Vue({
+			el : "#todo-list-example",
+			data : {
+				newTodoText:"",
+				todos : [
+					{
+						id : 1 ,
+						title : "first"
+					},
+					{
+						id : 2 ,
+						title : "second",
+					},
+					{
+						id : 3,
+						title : "third"
+					}
+				],
+				nextTodoId : 4
+			},
+			methods : {
+				addNewTodo : function(){
+					this.todos.push({
+						id : this.nextTodoId,
+						title : this.nextTodoText
+					});
+					this.todos ++ ;
+					this.nextTodoText = "";
+				}
+			},
+			mounted : function(){
+				console.log("啦啦啦")
+			}
+		})
+	</script>
+</body>
+</html>
