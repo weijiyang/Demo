@@ -9,18 +9,25 @@
 </head>
 <body>
 	<div id="todo-list-example">
-		<input type="text" 
-			v-model= "newTodoText"
-			v-on:keyup.enter = "addNewTodo"
-			placeholder = "Add a todo"
+		<input type="text"  v-model= "newTodoText" v-on:keyup.enter = "addNewTodo" placeholder = "Add a todo"
 		/>
 		<ul>
-			<li v-for="(todo,index) in todos" v-bind:key="todo.key" v-bind:title="todo.title" v-on:remove="todos.splice(index,1)" v-on:click="$emit('remove')">
-				
+			<li is="todo-item" v-for="(todo,index) in todos" v-bind:key="todo.key" v-bind:title="todo.title" v-on:remove="todos.splice(index,1)" > 
+				<!-- {{todo.title}}
+				<button v-on:click="$emit('remove')"> x </button> -->
 			</li>
 		</ul>
 	</div>
 	<script>
+		Vue.component('todo-item', {
+		  template: '\
+		    <li>\
+		      {{ title }}\
+		      <button v-on:click="$emit(\'remove\')">X</button>\
+		    </li>\
+		  ',
+		  props: ['title']
+		});
 		new Vue({
 			el : "#todo-list-example",
 			data : {
@@ -45,14 +52,11 @@
 				addNewTodo : function(){
 					this.todos.push({
 						id : this.nextTodoId,
-						title : this.nextTodoText
+						title : this.newTodoText
 					});
-					this.todos ++ ;
-					this.nextTodoText = "";
+					this.nextTodoId ++ ;
+					this.newTodoText = "";
 				}
-			},
-			mounted : function(){
-				console.log("啦啦啦")
 			}
 		})
 	</script>
