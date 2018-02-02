@@ -6,3 +6,4 @@
 * key.html中 模板相互切换内容会复用，从而提高渲染速率，如果我们在文本框中填写了内容切换不同模板 他里面的内容并不会改变。当结构不一样的时候时候页面会重新渲染 ，内容不保存。
 * Vue 根元素不支持动态增加元素响应式，意思是data内的属性  如果我们动态vm.b="newmessage"这种形式添加  他不会具有响应式。虽然根元素不支持，因为javascript语言决定的但是我们可以封装一层对象 然后可以通过Vue.set vm.$set 或者通过 vm.useProfile = Object.assign({},vm.useProfile,{ newmsg : "" })形式来添加
 * $emit( 方法名 ，[ 参数 ])      v-on:方法名="callBack"  $emit负责像父组件传递一个函数并提供参数 ，而父级通过on监听该方法，同时将参数传入回调执行。经实验必须是通过模板进行传递统一模板不生效。
+* 常用键名 @keyup.name enter tab delete esc space up down left right           可以使用Vue.config.keyCodes.f1 = 112    但是ie9 每个按键的key会有所不同 所以使用内置名是最佳选择
