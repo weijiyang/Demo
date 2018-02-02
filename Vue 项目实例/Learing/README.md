@@ -7,3 +7,4 @@
 * Vue 根元素不支持动态增加元素响应式，意思是data内的属性  如果我们动态vm.b="newmessage"这种形式添加  他不会具有响应式。虽然根元素不支持，因为javascript语言决定的但是我们可以封装一层对象 然后可以通过Vue.set vm.$set 或者通过 vm.useProfile = Object.assign({},vm.useProfile,{ newmsg : "" })形式来添加
 * $emit( 方法名 ，[ 参数 ])      v-on:方法名="callBack"  $emit负责像父组件传递一个函数并提供参数 ，而父级通过on监听该方法，同时将参数传入回调执行。经实验必须是通过模板进行传递统一模板不生效。
 * 常用键名 @keyup.name enter tab delete esc space up down left right           可以使用Vue.config.keyCodes.f1 = 112    但是ie9 每个按键的key会有所不同 所以使用内置名是最佳选择
+* 鼠标按钮修饰符  left right middle
