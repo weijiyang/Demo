@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>props & events</title>
+	<script src="vue.js"></script>
+	<script src="vue-router.js"></script>	
+	<script src="js/child.vue"></script>
+</head>
+<body>
+	<div id="example">
+	<input type="text" v-model="msg">
+		<child-temp v-bind:message="msg"> </child-temp>
+	</div>
+
+	<script>
+		new Vue({
+			el : "#example",
+			data : {
+				msg : "this is the temp message"
+			}
+		})
+	</script>
+</body>
+</html>
