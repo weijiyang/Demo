@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>加入购物车特效</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script sr="js/jquery-1.8.3.min.js"></script>
+	<script src="jf/jquery.fly.min.js"></script>
+	<style>
+		.flyer {
+	      display: block;
+	      width: 50px;
+	      height: 50px;
+	      border-radius: 50px;
+	      position: fixed;
+	      margin-left: 50px;
+	      z-index: 9999;
+	    }
+	    .cart img{
+	      width: 60px;
+	      height: 60px;
+	      padding: 5px 0 0 250px;
+	    }
+	    .cartBox span{
+	      display: block;
+	      color: white;
+	      position: absolute;
+	      left: 282px;
+	      top: 226px;
+	      width: 25px;
+	      height: 25px;
+	      border-radius: 50%;
+	      text-align: center;
+	      line-height: 25px;
+	      background-color: red;
+	    }
+	</style>
+</head>
+<body>
+	<div class="box"> 
+    	![](img/1.jpg)
+    </div>
+    <div class="cartBox">
+        <div class="cart">
+            <i id="end"></i>
+            ![](img/2.jpg)
+            <span>0</span>
+      </div>
+    </div>
+
+<script>
+$('.box').on('click', addCart);
+    var num = 0;
+    function addCart(event) {
+      var offset = $('#end').offset(), flyer = $('![](img/1.jpg)');
+      flyer.fly({
+        start: {
+          left: event.pageX,
+          top: event.pageY
+        },
+        end: {
+          left: offset.left + 280,
+          top: offset.top,
+          width: 0,
+          height: 0
+        }
+      });
+      num++;  
+      $('.cartBox span').text(num);
+    }
+</script>
+</body>
+</html>
