@@ -2,71 +2,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>加入购物车特效</title>
-	<link rel="stylesheet" href="css/index.css">
-	<script sr="js/jquery-1.8.3.min.js"></script>
-	<script src="jf/jquery.fly.min.js"></script>
-	<style>
-		.flyer {
-	      display: block;
-	      width: 50px;
-	      height: 50px;
-	      border-radius: 50px;
-	      position: fixed;
-	      margin-left: 50px;
-	      z-index: 9999;
-	    }
-	    .cart img{
-	      width: 60px;
-	      height: 60px;
-	      padding: 5px 0 0 250px;
-	    }
-	    .cartBox span{
-	      display: block;
-	      color: white;
-	      position: absolute;
-	      left: 282px;
-	      top: 226px;
-	      width: 25px;
-	      height: 25px;
-	      border-radius: 50%;
-	      text-align: center;
-	      line-height: 25px;
-	      background-color: red;
-	    }
-	</style>
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fly.min.js"></script>
 </head>
 <body>
-	<div class="box"> 
-    	![](img/1.jpg)
-    </div>
-    <div class="cartBox">
-        <div class="cart">
-            <i id="end"></i>
-            ![](img/2.jpg)
-            <span>0</span>
-      </div>
+	
+	<div id="box"> 
+    	<img id="fly" src="images/js.png" alt="js" />
     </div>
 
+
 <script>
-$('.box').on('click', addCart);
-    var num = 0;
-    function addCart(event) {
-      var offset = $('#end').offset(), flyer = $('![](img/1.jpg)');
-      flyer.fly({
-        start: {
-          left: event.pageX,
-          top: event.pageY
-        },
-        end: {
-          left: offset.left + 280,
-          top: offset.top,
-          width: 0,
-          height: 0
-        }
-      });
-      num++;  
-      $('.cartBox span').text(num);
-    }
+jQuery(function($) {
+	$("#box").click(function( event ){
+	  	$('#box').fly({
+		    start:{
+		      left: event.pageX,  //开始位置（必填）#fly元素会被设置成position: fixed
+		      top: event.pageY  //开始位置（必填）
+		    },
+		    end:{
+		      left: 900, //结束位置（必填）
+		      top: 100,  //结束位置（必填）
+		      width: 5, //结束时高度
+		      height: 5 //结束时高度
+		    },
+		    autoPlay: true, //是否直接运动,默认true
+		    speed: 2, //越大越快，默认1.2
+		    vertex_Rtop:20, //运动轨迹最高点top值，默认20
+		    onEnd: function(){
+		    		this.destroy();
+			    } //结束回调
+			});
+		});
+
+	})
+	
+</script>
 </script>
 </body>
 </html>

@@ -1,0 +1,11 @@
+#box{
+	width:100px;
+	height:100px;
+	position:fixed;
+	top:100px;
+	left:200px;
+}
+#box img{
+	width:100px;
+	height:100px;
+}
