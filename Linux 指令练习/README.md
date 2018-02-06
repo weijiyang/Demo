@@ -5,4 +5,4 @@
     剪切：                       mv file1 file2                                           mv dir1 dir2
     删除：                        rm file                                                    rm -r dir
     进入：                        vi/cat/head/tail/more file                      cd dir
-    文件修改：                i插入 esc退出 :q!推出  ：wq!保存退出  ctrl + insert 复制  shift + insert 粘贴
+    文件修改：                i插入 esc退出 :q!推出  ：wq!保存退出  ctrl + insert 复制           shift + insert 粘贴
