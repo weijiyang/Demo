@@ -8,3 +8,4 @@
 * $emit( 方法名 ，[ 参数 ])      v-on:方法名="callBack"  $emit负责像父组件传递一个函数并提供参数 ，而父级通过on监听该方法，同时将参数传入回调执行。经实验必须是通过模板进行传递统一模板不生效。
 * 常用键名 @keyup.name enter tab delete esc space up down left right           可以使用Vue.config.keyCodes.f1 = 112    但是ie9 每个按键的key会有所不同 所以使用内置名是最佳选择
 * 鼠标按钮修饰符  left right middle
+* 组件之间引入css 或者 js 会通过webpack进行规整，这样出现问题，每个组件中引入的样式文件，合并为一个会出现样式的覆盖重复问题。而解决方法  是给每个组件的style 标签添加scoped关键字  同时引入的css文件  也可以这样<style src="../css/bootstrap.css" scoped> </style>这样引用  。
