@@ -9,10 +9,20 @@
 </head>
 <body>
 		<div id="app">
-		 
+		 	<component v-bind:is="currentView"></component>
 		</div>
 		<script>
-			
+			var vm = new Vue({
+				el: "#app",
+				data : {
+					currentView : 'home'
+				},
+				components : {
+					home : {"<span>THIS IS HOME ~</span>"},
+					posts : {"<span>THIS IS POST ~</span>"},
+					archive : {"<span>THIS IS ARCHIVE ~</span>"}
+				}
+			})
 		</script>
 </body>
 </html>
