@@ -10,17 +10,25 @@
 <body>
 		<div id="app">
 		 	<component v-bind:is="currentView"></component>
+		 	<button @click="change">点我随机换组件</button>
 		</div>
 		<script>
 			var vm = new Vue({
 				el: "#app",
 				data : {
-					currentView : 'home'
+					currentView : 'home',
+					currentArr : ['home', 'posts','archive']
 				},
 				components : {
-					home : {"<span>THIS IS HOME ~</span>"},
-					posts : {"<span>THIS IS POST ~</span>"},
-					archive : {"<span>THIS IS ARCHIVE ~</span>"}
+					home : {template : "<span>THIS IS HOME ~</span>"},
+					posts : {template : "<span>THIS IS POST ~</span>"},
+					archive : {template : "<span>THIS IS ARCHIVE ~</span>"}
+				},
+				methods: {
+					change : function(){
+						var id = Math.floor(Math.random()*3);
+						this.currentView = this.currentArr[id];
+					}	
 				}
 			})
 		</script>
