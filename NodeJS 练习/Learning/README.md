@@ -17,3 +17,12 @@
 * buf.compare()  缓冲区对比
 * buf.copy(target,targetStart,sourceStart,sourceEnd)缓冲区拷贝
 * buf.slice(start , end) 缓冲区裁剪
+
+## stream 数据流
+* var fs = require("fs")  data = "";
+* 创建可读流  var readStream = fs.createReadStream("input.txt");
+* 设计编码 readerStream.setEncoding('UTF8')
+* 处理流事件 data 有数据可读时触发、end没有更多数据可读时触发、error在发生错误时触发、finish 在所有数据已被写入到底层系统时触发
+* 创建可写流 var writeStream = fs.createWriteStream()
+* 写入文件 writeStream.write(data , 'URF8')
+* 写入结束 writeStream.end(内容) 标记文件末尾
