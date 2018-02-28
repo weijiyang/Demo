@@ -26,3 +26,5 @@
 * 创建可写流 var writeStream = fs.createWriteStream()
 * 写入文件 writeStream.write(data , 'URF8')
 * 写入结束 writeStream.end(内容) 标记文件末尾
+* readStream.pipe(writeStream) 时结合可读流和 可写流的操作，更简洁
+* 链式流 指的是通过链接输出流到另外一个或多个流操作，一半多是管道操作 fs.createReadStream('input.txt').pipe(zlib.createGzip()).pipe(fs.createWriteStream('input.txt.gz'));
