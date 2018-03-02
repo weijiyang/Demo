@@ -28,3 +28,6 @@
 * 写入结束 writeStream.end(内容) 标记文件末尾
 * readStream.pipe(writeStream) 时结合可读流和 可写流的操作，更简洁
 * 链式流 指的是通过链接输出流到另外一个或多个流操作，一半多是管道操作 fs.createReadStream('input.txt').pipe(zlib.createGzip()).pipe(fs.createWriteStream('input.txt.gz'));
+
+## node.js 模块系统
+* exports 是模块的公开接口，require用来从外部获取模块接口，及获取模块的exports对象
