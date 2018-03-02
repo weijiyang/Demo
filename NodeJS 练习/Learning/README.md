@@ -44,6 +44,7 @@
 
 ## url 模块
 * var url = require("url")
+* url.parse()可以将一个完整的URL地址，分为很多部分，常用的有：host、port、pathname、path、query。
 *                    url.parse(string).query
                                            |
            url.parse(string).pathname      |
