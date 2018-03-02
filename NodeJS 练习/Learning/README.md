@@ -41,3 +41,23 @@
 
 ### exports 和 module.exports 的区别
 * exports 相当于快捷方式  而 module.exports相当于源文件  exports 相当于moudle.exports 的引用   而require 只能看到module.exports这个对象，他是看不到exports对象的，我们在编写模块是用到的exports对象实际上只是对module.exports的引用。 
+
+## url 模块
+* var url = require("url")
+*                    url.parse(string).query
+                                           |
+           url.parse(string).pathname      |
+                       |                   |
+                       |                   |
+                     ------ -------------------
+http://localhost:8888/start?foo=bar&hello=world
+                                ---       -----
+                                 |          |
+                                 |          |
+              querystring.parse(queryString)["foo"]    |
+                                            |
+                         querystring.parse(queryString)["hello"]
+
+## node.js 路由
+* url.parse()可以将一个完整的URL地址，分为很多部分，常用的有：host、port、pathname、path、query。
+* var fs = require('fs');fs.readFileSync('123.txt','utf-8');读取文件内容
