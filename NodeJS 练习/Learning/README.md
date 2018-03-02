@@ -62,3 +62,7 @@ http://localhost:8888/start?foo=bar&hello=world
 ## node.js 路由
 * url.parse()可以将一个完整的URL地址，分为很多部分，常用的有：host、port、pathname、path、query。
 * var fs = require('fs');fs.readFileSync('123.txt','utf-8');读取文件内容
+
+## Global Object
+* __filename   执行文件的绝对路径
+* __dirname 执行文件所在文件夹
