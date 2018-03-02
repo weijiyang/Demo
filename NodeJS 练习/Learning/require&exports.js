@@ -3,6 +3,7 @@
 */
 
 var Hello = require('./exports')
-hello = new Hello()
-hello.setName("weijiyang")
-hello.sayName()
+var hello = new Hello()
+// hello.setName("weijiyang")
+// hello.sayName()
+console.log(hello)

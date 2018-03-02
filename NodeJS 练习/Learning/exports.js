@@ -9,6 +9,9 @@ function Hello(){
 		console.log('Hello ' + name)
 	}	
 }
+exports.sex = function(){
+	this.sex = "boy"
+	console.log( " 调用 sex 方法" + this.sex )
+}
 
-
-module.exports = Hello;
+// module.exports = Hello;
