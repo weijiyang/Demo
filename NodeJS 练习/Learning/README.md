@@ -36,6 +36,8 @@
 * require 加载过程  首先会判断是否在文件模块缓存中，如果不在判断是否是原生模块，不是原生模块，查找文件模块，再根据扩展名加载文件模块并缓存，如果是原生模块，判断是不是再原生模块缓存中，如果不在加载原生模块 然后再进行缓存   如果在文件模块或原生模块任意一种的缓存中，直接加载即可。
 * 原生模块 ： 在Node.js源代码编译的时候编译进了二进制执行文件，加载速度最快
 * 文件模块 ： 时动态加载的，加载速度比原生模块慢
+* require 接受的参数 1.http、fs、path等原生模块 2../mod 等相对路径的文件模块
+*3. /pathtomodule/mod 绝对路径的文件魔魁啊 4. mod 非原生模块的文件模块
 
 ### exports 和 module.exports 的区别
 * exports 相当于快捷方式  而 module.exports相当于源文件  exports 相当于moudle.exports 的引用   而require 只能看到module.exports这个对象，他是看不到exports对象的，我们在编写模块是用到的exports对象实际上只是对module.exports的引用。 
