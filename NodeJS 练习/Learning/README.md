@@ -30,4 +30,5 @@
 * 链式流 指的是通过链接输出流到另外一个或多个流操作，一半多是管道操作 fs.createReadStream('input.txt').pipe(zlib.createGzip()).pipe(fs.createWriteStream('input.txt.gz'));
 
 ## node.js 模块系统
-* exports 是模块的公开接口，require用来从外部获取模块接口，及获取模块的exports对象
+* exports 是模块的公开接口，require用来从外部获取模块接口，及获取
+* require 加载过程  首先会判断是否在文件模块缓存中，如果不在判断是否是原生模块，不是原生模块，查找文件模块，再根据扩展名加载文件模块并缓存，如果是原生模块，判断是不是再原生模块缓存中，如果不在加载原生模块 然后再进行缓存   如果在文件模块或原生模块任意一种的缓存中，直接加载即可。
