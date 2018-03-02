@@ -66,3 +66,7 @@ http://localhost:8888/start?foo=bar&hello=world
 ## Global Object
 * __filename   执行文件的绝对路径
 * __dirname 执行文件所在文件夹
+
+## console
+* console.log("%d" , num)  console.log() console.info console.error
+* console.time("message")   执行代码 console.timeEnd("message")   测试执行代码所消耗的时间
