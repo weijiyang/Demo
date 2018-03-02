@@ -38,4 +38,4 @@
 * 文件模块 ： 时动态加载的，加载速度比原生模块慢
 
 ### exports 和 module.exports 的区别
-* exports 相当于快捷方式  而 module.exports相当于源文件  exports 相当于moudle.exports 的引用
+* exports 相当于快捷方式  而 module.exports相当于源文件  exports 相当于moudle.exports 的引用   而require 只能看到module.exports这个对象，他是看不到exports对象的，我们在编写模块是用到的exports对象实际上只是对module.exports的引用。 
