@@ -74,9 +74,19 @@ http://localhost:8888/start?foo=bar&hello=world
 ## process 控制进程 获取信息 & 调用方法等
 
 ## node.js 文件系统
-* Node。js文件系统(fs 模块) 模块中的方法均有同步异步两个版本，异步方法最后一个参数为回调函数，回调第一个参数包含错误信息
+* Node.js文件系统(fs 模块) 模块中的方法均有同步异步两个版本，异步方法最后一个参数为回调函数，回调第一个参数包含错误信息
 * 异步比起同步，异步性能更高， 速度更快，没有阻塞
 * 异步 fs.readFile()     同步 fs.readFileSync()
+* 打开文件 fs.open("input.txt","r+",function(err,fd){})
+* 通过异步模式获取文件信息 fs.stat(path,function(err,stats))
+* console.log("是否是文件",stats.isFile())
+  console.log("是否是目录",stats.isDirectory())
+  console.log("是否是块设备",stats.isBlockDevice())
+  console.log("是否是字符设备",stats.isCharacterDevice())
+  console.log("是否是软连接",stats.isSymbolicLink())
+  console.log("是否是FIFO,UNIX中一种特殊类型命令管道",stats.isFIFO())
+  console.log("是否是Socket",stats.isSocket())
+* fs.writeFile(file,data,option,callback)
 
 
 
