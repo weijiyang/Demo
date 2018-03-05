@@ -8,3 +8,7 @@ console.time("获取数据")
 
 console.timeEnd("获取数据")
 console.log("程序执行完毕")
+
+
+
+console.log(process.version())
